@@ -23,7 +23,7 @@ def hello(request):
     return render(request, 'hello.html', context)
 
 def lunch(request):
-    menus = [ '쌀밥', '쌀국수', '쌀죽', '쌀드링크']
+    menus = [ '쌀밥', '쌀국수', '쌀죽', '쌀드링크', '오렌지 스무디', '사과 케일 주스', '불고기 백반', '레몬 소다','수박 화채','!!!축하합니다!! 굴전!! 당첨되셨습니다!!!!']
 
     pick = random.choice(menus)
 
@@ -70,3 +70,16 @@ def posts(request):
         'fake_posts': fake_posts
     }
     return render(request, 'posts.html', context)
+
+def ping(request):
+    return render(request, 'ping.html')
+
+def pong(request):
+    title = request.GET.get('tit')
+    content = request.GET.get('cont')
+
+    context = {
+        'title': title,
+        'content': content
+    }
+    return render(request, 'pong.html', context)

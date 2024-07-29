@@ -29,5 +29,6 @@ urlpatterns = [
     path('username/<name>/', views.username),
     path('cube/<int:number>/', views.cube),
     path('posts/', views.posts),
-
+    path('ping/', views.ping),
+    path('pong/', views.pong),
 ]
